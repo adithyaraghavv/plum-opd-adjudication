@@ -10,16 +10,17 @@ AI-powered web application that automates approval/rejection decisions for Outpa
 ### ⚠️ Partial Approval
 ![Partial](opd%20screenshot/partial.png)
 ### 🔍 Manual Review
-![Manual Review](screenshots/manual-review.png)
+![Manual Review](opd%20screenshot/manual-review.png)
 
 ### 🧪 Test Cases
-![Test Cases](screenshots/test-cases.png)
+![Test Cases](opd%20screenshot/test-cases.png)
 
 ### 📊 History Dashboard
-![History](screenshots/history.png)
+![History](opd%20screenshot/history.png)
 
 ### 📜 Policy
-![Policy](screenshots/policy.png)
+
+![Policy](opd%20screenshot/policy.png)
 
 ---
 
