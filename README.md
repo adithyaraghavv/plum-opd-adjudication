@@ -7,7 +7,7 @@ AI-powered web application that automates approval/rejection decisions for Outpa
 ## 🎬 Demo Screenshots
 
 ### ✅ Approved Claim — Simple Consultation
-![Approved](screenshots/Screenshot%202026-04-11%20161312.png)
+![Approved](screenshots/approved.png)
 
 ### ⚠️ Partial Approval — Dental (Root Canal covered, Whitening excluded)
 ![Partial](screenshots/Screenshot%202026-04-11%20154756.png)
