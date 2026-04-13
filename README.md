@@ -4,24 +4,22 @@ AI-powered web application that automates approval/rejection decisions for Outpa
 
 ---
 
-## 🎬 Demo Screenshots
-
-### ✅ Approved Claim — Simple Consultation
+### ✅ Approved Claim
 ![Approved](screenshots/approved.png)
 
-### ⚠️ Partial Approval — Dental (Root Canal covered, Whitening excluded)
+### ⚠️ Partial Approval
 ![Partial](screenshots/partial.png)
 
-### 🔍 Manual Review — Fraud Detection
+### 🔍 Manual Review
 ![Manual Review](screenshots/manual-review.png)
 
-### 🧪 All 10 Test Cases
+### 🧪 Test Cases
 ![Test Cases](screenshots/test-cases.png)
 
-### 📊 Claims History Dashboard
+### 📊 History Dashboard
 ![History](screenshots/history.png)
 
-### 📜 Policy Reference
+### 📜 Policy
 ![Policy](screenshots/policy.png)
 
 ---
