@@ -1,49 +1,129 @@
 # 🏥 Plum OPD Claim Adjudication Tool
 
-AI-powered web application that automates approval/rejection decisions for Outpatient Department (OPD) insurance claims.
+AI-powered web application that automates approval/rejection decisions for Outpatient Department (OPD) insurance claims. Built with React and Claude AI.
 
-## 🎯 What it does
-- Processes medical documents (bills, prescriptions)
-- Runs a 6-step adjudication engine against policy rules
-- Makes APPROVED / REJECTED / PARTIAL / MANUAL REVIEW decisions
+---
+
+## 🎬 Demo Screenshots
+
+### ✅ Approved Claim — Simple Consultation
+![Approved](screenshots/Screenshot%202026-04-11%20161312.png)
+
+### ⚠️ Partial Approval — Dental (Root Canal covered, Whitening excluded)
+![Partial](screenshots/Screenshot%202026-04-12%20154756.png)
+
+### 🔍 Manual Review — Fraud Detection
+![Manual Review](screenshots/Screenshot%202026-04-12%20060043.png)
+
+### 🧪 All 10 Test Cases
+![Test Cases](screenshots/Screenshot%202026-04-11%20161325.png)
+
+### 📊 Claims History Dashboard
+![History](screenshots/Screenshot%202026-04-11%20161348.png)
+
+### 📜 Policy Reference
+![Policy](screenshots/Screenshot%202026-04-11%20161429.png)
+
+---
+
+## 🎯 What It Does
+
+- Uploads medical documents (bills, prescriptions) and extracts data using Claude AI Vision
+- Runs a **6-step adjudication engine** against policy rules
+- Makes **APPROVED / REJECTED / PARTIAL / MANUAL REVIEW** decisions instantly
 - Detects fraud patterns automatically
-- Integrates with Claude AI for document extraction and insights
+- Shows full financial breakdown (copay, network discount, approved amount)
+- Maintains claims history with dashboard stats
+
+---
 
 ## ✅ All 10 Test Cases Passing
-| Case | Scenario | Result |
-|------|----------|--------|
-| TC001 | Simple consultation | ✅ APPROVED ₹1,350 |
-| TC002 | Dental + cosmetic | ⚠️ PARTIAL ₹10,800 |
-| TC003 | Exceeds limit | ❌ REJECTED |
-| TC004 | Missing prescription | ❌ REJECTED |
-| TC005 | Diabetes waiting period | ❌ REJECTED |
-| TC006 | Ayurvedic treatment | ✅ APPROVED |
-| TC007 | MRI without pre-auth | ❌ REJECTED |
-| TC008 | Multiple same-day claims | 🔍 MANUAL REVIEW |
-| TC009 | Weight loss excluded | ❌ REJECTED |
-| TC010 | Apollo cashless | ✅ APPROVED + Cashless |
+
+| Case | Scenario | Expected | Result |
+|------|----------|----------|--------|
+| TC001 | Simple consultation - Viral fever | ✅ APPROVED ₹1,350 | ✅ Pass |
+| TC002 | Dental - Root canal + Whitening | ⚠️ PARTIAL ₹10,800 | ✅ Pass |
+| TC003 | Claim exceeds ₹5,000 limit | ❌ REJECTED | ✅ Pass |
+| TC004 | No prescription submitted | ❌ REJECTED | ✅ Pass |
+| TC005 | Diabetes within 90-day wait | ❌ REJECTED | ✅ Pass |
+| TC006 | Ayurvedic Panchakarma | ✅ APPROVED | ✅ Pass |
+| TC007 | MRI without pre-authorization | ❌ REJECTED | ✅ Pass |
+| TC008 | 3 claims same day | 🔍 MANUAL REVIEW | ✅ Pass |
+| TC009 | Weight loss / obesity excluded | ❌ REJECTED | ✅ Pass |
+| TC010 | Apollo Hospitals cashless | ✅ APPROVED + Cashless | ✅ Pass |
+
+---
+
+## ⚙️ Adjudication Engine — 6 Steps
+
+1. **Eligibility Check** — Policy active, waiting period, minimum amount
+2. **Document Validation** — Prescription present, doctor registration valid
+3. **Coverage Verification** — Treatment not excluded, pre-auth obtained
+4. **Limit Validation** — Per-claim ₹5K, sub-limits, 10% copay applied
+5. **Medical Necessity** — Diagnosis justifies treatment
+6. **Fraud Detection** — Same-day claims, high-value flags, duplicate detection
+
+---
+
+## 💰 Policy Rules Implemented
+
+| Rule | Value |
+|------|-------|
+| Annual Limit | ₹50,000 |
+| Per Claim Limit | ₹5,000 |
+| Copay | 10% |
+| Network Discount | 20% |
+| Consultation Sub-limit | ₹2,000 |
+| Pharmacy Sub-limit | ₹15,000 |
+| Dental Sub-limit | ₹10,000 |
+| Diagnostics Sub-limit | ₹10,000 |
+| Alternative Medicine | ₹8,000 |
+| Submission Deadline | 30 days |
+
+---
 
 ## 🛠️ Tech Stack
-- React 18 + Vite
-- Anthropic Claude API (document extraction + AI insights)
-- Rule-based adjudication engine (JavaScript)
-- In-memory claims storage
+
+- **Frontend**: React 18 + Vite
+- **AI/LLM**: Anthropic Claude API (document OCR + claim insights)
+- **Decision Engine**: Rule-based adjudication (JavaScript)
+- **Storage**: Session-based claims history
+- **Deployment**: Localhost / Vercel ready
+
+---
 
 ## 🚀 Run Locally
+
 ```bash
 npm install
 npm run dev
 ```
-Open http://localhost:5173
 
-## 📋 Policy Rules Implemented
-- Per claim limit: ₹5,000
-- Annual limit: ₹50,000
-- 10% copay on all claims
-- 20% network hospital discount
-- Waiting periods (Diabetes: 90 days, Hypertension: 90 days)
-- Exclusions: cosmetic, weight loss, bariatric, LASIK etc.
-- Pre-authorization: MRI, CT Scan
-- Fraud detection: same-day multiple claims
-- Late submission: 30-day deadline
-- Duplicate claim detection
+Open **http://localhost:5173**
+
+For AI document extraction — add your Anthropic API key using the **"+ Add API Key"** button in the top right.
+
+---
+
+## 📁 Project Structure
+
+src/
+└── App.jsx          # Complete application (adjudication engine + UI)
+index.html           # Entry point
+vite.config.js       # Vite configuration
+package.json         # Dependencies
+screenshots/         # Demo screenshots
+
+---
+
+## 📝 Assumptions
+
+- Per-claim limit does not apply to partial claims (sub-limits used instead)
+- Doctor registration validated by format only (State/Number/Year)
+- Fraud detection threshold: 3+ claims same day
+- In-memory storage (production would use Supabase/PostgreSQL)
+- API key entered in browser for demo (production uses backend proxy)
+
+---
+
+*Built for Plum AI Automation Engineer Assignment*
