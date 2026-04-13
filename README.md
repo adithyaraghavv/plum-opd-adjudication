@@ -8,8 +8,7 @@ AI-powered web application that automates approval/rejection decisions for Outpa
 ![approved](https://github.com/adithyaraghavv/plum-opd-adjudication/blob/main/opd%20screenshot/approved.png)
 
 ### ⚠️ Partial Approval
-![Partial](screenshots/partial.png)
-
+![Partial](opd%20screenshot/partial.png)
 ### 🔍 Manual Review
 ![Manual Review](screenshots/manual-review.png)
 
