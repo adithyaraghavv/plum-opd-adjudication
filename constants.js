@@ -51,12 +51,12 @@ export const TEST_CASES = [
   { id: "TC010", label: "Network Cashless", tag: "APPROVED", tagColor: "#15803d", data: { member_name: "Deepak Shah", member_id: "EMP010", treatment_date: TODAY, join_date: JOIN, claim_amount: 4500, hospital: "Apollo Hospitals", is_cashless: true, doctor_name: "Dr. Iyer", doctor_reg: "TN/56789/2013", diagnosis: "Acute bronchitis", consultation_fee: 1500, medicine_cost: 3000, diagnostic_cost: 0, dental_cost: 0, other_cost: 0, medicines_list: "Antibiotics, Bronchodilators", tests_list: "", procedures_list: "", prev_claims_today: 0, has_prescription: true, has_bill: true } },
 ];
 
-// Decision config: colors, icons, labels per decision type
+// Decision config: colors/backgrounds tuned for dark theme
 export const DC = {
-  APPROVED:      { color: "#15803d", bg: "#f0fdf4", border: "#86efac", icon: "✓", label: "Approved" },
-  PARTIAL:       { color: "#b45309", bg: "#fffbeb", border: "#fcd34d", icon: "◑", label: "Partial Approval" },
-  REJECTED:      { color: "#b91c1c", bg: "#fef2f2", border: "#fca5a5", icon: "✕", label: "Rejected" },
-  MANUAL_REVIEW: { color: "#d97706", bg: "#fffbeb", border: "#fcd34d", icon: "⊙", label: "Manual Review" },
+  APPROVED:      { color: "#4ade80", bg: "#052e16", border: "#14532d", icon: "✓", label: "Approved" },
+  PARTIAL:       { color: "#fbbf24", bg: "#1c1400", border: "#854d0e", icon: "◑", label: "Partial Approval" },
+  REJECTED:      { color: "#f87171", bg: "#1a0505", border: "#7f1d1d", icon: "✕", label: "Rejected" },
+  MANUAL_REVIEW: { color: "#fb923c", bg: "#1a0d00", border: "#7c2d12", icon: "⊙", label: "Manual Review" },
 };
 
 export const EMPTY_FORM = {
