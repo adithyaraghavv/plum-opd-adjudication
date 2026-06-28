@@ -108,7 +108,7 @@ export default function PolicyTab() {
                 borderRight: i < arr.length - 1 ? "1px solid #e5e7eb" : "none",
               }}
             >
-              <div style={{ fontSize: 18, fontWeight: 800, color: "#ede9fe", marginBottom: 4 }}>{num}</div>
+              <div style={{ fontSize: 18, fontWeight: 800, color: "#fee2e2", marginBottom: 4 }}>{num}</div>
               <div style={{ fontSize: 12, fontWeight: 700, color: "#374151", marginBottom: 2 }}>{title}</div>
               <div style={{ fontSize: 11, color: "#9ca3af" }}>{desc}</div>
             </div>

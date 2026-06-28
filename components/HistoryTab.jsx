@@ -19,7 +19,7 @@ export default function HistoryTab({ history }) {
       {/* Stats */}
       <div className="four-col" style={{ marginBottom: 16 }}>
         {[
-          { l: "Total Claims", v: history.length, c: "#7c3aed" },
+          { l: "Total Claims", v: history.length, c: "#dc2626" },
           { l: "Approved", v: history.filter((h) => h.decision === "APPROVED").length, c: "#15803d" },
           { l: "Rejected / Partial", v: history.filter((h) => ["REJECTED", "PARTIAL"].includes(h.decision)).length, c: "#b91c1c" },
           { l: "Total Approved", v: "₹" + totalApproved.toLocaleString(), c: "#1d4ed8" },

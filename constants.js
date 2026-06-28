@@ -56,7 +56,7 @@ export const DC = {
   APPROVED:      { color: "#15803d", bg: "#f0fdf4", border: "#86efac", icon: "✓", label: "Approved" },
   PARTIAL:       { color: "#b45309", bg: "#fffbeb", border: "#fcd34d", icon: "◑", label: "Partial Approval" },
   REJECTED:      { color: "#b91c1c", bg: "#fef2f2", border: "#fca5a5", icon: "✕", label: "Rejected" },
-  MANUAL_REVIEW: { color: "#6d28d9", bg: "#faf5ff", border: "#c4b5fd", icon: "⊙", label: "Manual Review" },
+  MANUAL_REVIEW: { color: "#d97706", bg: "#fffbeb", border: "#fcd34d", icon: "⊙", label: "Manual Review" },
 };
 
 export const EMPTY_FORM = {

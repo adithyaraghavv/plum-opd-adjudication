@@ -114,42 +114,55 @@ export default function App() {
   return (
     <div style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif", background: "#f3f4f6", minHeight: "100vh", paddingBottom: 48 }}>
       {/* Header */}
-      <header style={{ background: "white", borderBottom: "1px solid #e5e7eb", padding: "0 24px", position: "sticky", top: 0, zIndex: 10 }}>
-        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "center", gap: 12, height: 56, flexWrap: "wrap" }}>
-          <div style={{ width: 34, height: 34, borderRadius: 8, background: "#7c3aed", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-            <span style={{ color: "white", fontSize: 16, fontWeight: 800 }}>P</span>
-          </div>
-          <div>
-            <div style={{ fontSize: 14, fontWeight: 700, color: "#111827" }}>Plum OPD Adjudication</div>
-            <div style={{ fontSize: 11, color: "#9ca3af" }}>
-              Policy PLUM_OPD_2024 · Annual ₹50K · Per Claim ₹5K
+      <header style={{ background: "#0f0f0f", padding: "0 24px", position: "sticky", top: 0, zIndex: 10 }}>
+        <div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", alignItems: "center", gap: 14, height: 58, flexWrap: "wrap" }}>
+          {/* Logo */}
+          <div style={{ display: "flex", alignItems: "center", gap: 10, flexShrink: 0 }}>
+            <div style={{ width: 32, height: 32, borderRadius: 6, background: "#dc2626", display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <span style={{ color: "white", fontSize: 15, fontWeight: 900, letterSpacing: "-0.5px" }}>P</span>
+            </div>
+            <div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: "white", letterSpacing: "-0.2px" }}>Plum OPD Adjudication</div>
+              <div style={{ fontSize: 10, color: "#6b7280", letterSpacing: "0.02em" }}>
+                Policy PLUM_OPD_2024 · Annual ₹50K · Per Claim ₹5K
+              </div>
             </div>
           </div>
+
           <div style={{ marginLeft: "auto", display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
-            {/* Annual limit badge */}
             {history.length > 0 && (
-              <span style={{ fontSize: 11, fontWeight: 600, color: annualRemaining < 10000 ? "#b91c1c" : "#15803d", background: annualRemaining < 10000 ? "#fef2f2" : "#f0fdf4", padding: "3px 10px", borderRadius: 20, border: `1px solid ${annualRemaining < 10000 ? "#fca5a5" : "#86efac"}` }}>
+              <span style={{
+                fontSize: 11, fontWeight: 700, padding: "3px 10px", borderRadius: 4,
+                color: annualRemaining < 10000 ? "#dc2626" : "#16a34a",
+                background: annualRemaining < 10000 ? "#1a0000" : "#001a00",
+                border: `1px solid ${annualRemaining < 10000 ? "#7f1d1d" : "#14532d"}`,
+              }}>
                 ₹{annualRemaining.toLocaleString()} remaining
               </span>
             )}
-            {["10% Copay", "20% Network Discount", "30-day Window"].map((b) => (
-              <span key={b} style={{ padding: "3px 10px", borderRadius: 20, background: "#f3f4f6", fontSize: 11, fontWeight: 600, color: "#374151" }}>
+            {["10% Copay", "20% Discount", "30-day Window"].map((b) => (
+              <span key={b} style={{ padding: "3px 10px", borderRadius: 4, background: "#1a1a1a", border: "1px solid #2a2a2a", fontSize: 11, fontWeight: 600, color: "#9ca3af" }}>
                 {b}
               </span>
             ))}
             <button
               onClick={() => setShowApiInput((v) => !v)}
-              style={{ padding: "4px 12px", borderRadius: 6, background: apiKey ? "#f0fdf4" : "#fef9c3", border: `1px solid ${apiKey ? "#86efac" : "#fde047"}`, fontSize: 11, fontWeight: 700, cursor: "pointer", color: apiKey ? "#15803d" : "#854d0e" }}
+              style={{
+                padding: "5px 12px", borderRadius: 6, fontSize: 11, fontWeight: 700, cursor: "pointer",
+                background: apiKey ? "#001a00" : "#1a0a00",
+                border: `1px solid ${apiKey ? "#14532d" : "#78350f"}`,
+                color: apiKey ? "#16a34a" : "#d97706",
+              }}
             >
-              {apiKey ? "✓ API Key Set" : "+ Add API Key"}
+              {apiKey ? "✓ API Key" : "+ API Key"}
             </button>
           </div>
         </div>
 
         {showApiInput && (
-          <div style={{ maxWidth: 1100, margin: "0 auto", paddingBottom: 12, display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+          <div style={{ maxWidth: 1100, margin: "0 auto", paddingBottom: 12, display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap", borderTop: "1px solid #1a1a1a", paddingTop: 10 }}>
             <input
-              style={{ width: "100%", maxWidth: 420, padding: "8px 10px", border: "1px solid #d1d5db", borderRadius: 6, fontSize: 12, fontFamily: "inherit", outline: "none" }}
+              style={{ width: "100%", maxWidth: 420, padding: "8px 10px", border: "1px solid #2a2a2a", borderRadius: 6, fontSize: 12, fontFamily: "inherit", outline: "none", background: "#1a1a1a", color: "white" }}
               type="password"
               placeholder="Paste Anthropic API key (sk-ant-...) for document extraction"
               value={apiKey}
@@ -157,11 +170,11 @@ export default function App() {
             />
             <button
               onClick={() => setShowApiInput(false)}
-              style={{ padding: "6px 14px", background: "#7c3aed", color: "white", border: "none", borderRadius: 6, fontSize: 12, fontWeight: 700, cursor: "pointer" }}
+              style={{ padding: "6px 14px", background: "#dc2626", color: "white", border: "none", borderRadius: 6, fontSize: 12, fontWeight: 700, cursor: "pointer" }}
             >
               Save
             </button>
-            <span style={{ fontSize: 11, color: "#9ca3af" }}>Key stays in browser only — never sent anywhere except Anthropic</span>
+            <span style={{ fontSize: 11, color: "#6b7280" }}>Key stays in browser only — never sent anywhere except Anthropic</span>
           </div>
         )}
       </header>
@@ -174,14 +187,16 @@ export default function App() {
               key={t.id}
               onClick={() => setTab(t.id)}
               style={{
-                padding: "12px 18px",
+                padding: "12px 20px",
                 fontSize: 13,
                 fontWeight: 600,
-                color: tab === t.id ? "#7c3aed" : "#6b7280",
+                color: tab === t.id ? "#dc2626" : "#6b7280",
                 background: "none",
                 border: "none",
-                borderBottom: tab === t.id ? "2px solid #7c3aed" : "2px solid transparent",
+                borderBottom: tab === t.id ? "2px solid #dc2626" : "2px solid transparent",
                 cursor: "pointer",
+                letterSpacing: "0.01em",
+                transition: "color 0.15s",
               }}
             >
               {t.id === "history" ? `History (${history.length})` : t.label}

@@ -108,7 +108,7 @@ Return ONLY the JSON.`,
     <div className="card" style={{ padding: 20, marginBottom: 16 }}>
       <div style={{ fontSize: 13, fontWeight: 700, color: "#111827", marginBottom: 12, display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
         Upload Medical Documents
-        <span style={{ fontSize: 11, fontWeight: 500, color: "#7c3aed", background: "#ede9fe", padding: "2px 8px", borderRadius: 20 }}>
+        <span style={{ fontSize: 11, fontWeight: 500, color: "#dc2626", background: "#fee2e2", padding: "2px 8px", borderRadius: 20 }}>
           AI Extraction
         </span>
         {!apiKey && (
@@ -124,12 +124,12 @@ Return ONLY the JSON.`,
         onDrop={onDrop}
         onClick={() => fileRef.current?.click()}
         style={{
-          border: `2px dashed ${dragOver ? "#7c3aed" : "#d1d5db"}`,
+          border: `2px dashed ${dragOver ? "#dc2626" : "#d1d5db"}`,
           borderRadius: 8,
           padding: "24px 16px",
           textAlign: "center",
           cursor: "pointer",
-          background: dragOver ? "#faf5ff" : "#fafafa",
+          background: dragOver ? "#fff5f5" : "#fafafa",
           transition: "all 0.15s",
         }}
       >
@@ -177,7 +177,7 @@ Return ONLY the JSON.`,
             </div>
           ))}
           {extracting && (
-            <div style={{ fontSize: 12, color: "#7c3aed", fontWeight: 600, textAlign: "center", padding: "8px 0" }}>
+            <div style={{ fontSize: 12, color: "#dc2626", fontWeight: 600, textAlign: "center", padding: "8px 0" }}>
               AI extracting data...
             </div>
           )}

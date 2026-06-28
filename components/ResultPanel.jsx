@@ -134,8 +134,8 @@ export default function ResultPanel({ result, claimAmount, processing }) {
 
         {/* Fraud Flags */}
         {result.flags?.length > 0 && (
-          <div style={{ marginBottom: 12, padding: "8px 12px", background: "#faf5ff", borderRadius: 6, border: "1px solid #c4b5fd" }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: "#6d28d9", marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+          <div style={{ marginBottom: 12, padding: "8px 12px", background: "#fff5f5", borderRadius: 6, border: "1px solid #fca5a5" }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: "#b91c1c", marginBottom: 4, textTransform: "uppercase", letterSpacing: "0.05em" }}>
               Fraud Flags
             </div>
             {result.flags.map((flag) => (

@@ -15,8 +15,8 @@ export default function TestCasesTab({ onLoad }) {
             className="card"
             style={{ padding: 16, cursor: "pointer", transition: "all 0.15s" }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "#7c3aed";
-              e.currentTarget.style.boxShadow = "0 0 0 3px #ede9fe";
+              e.currentTarget.style.borderColor = "#dc2626";
+              e.currentTarget.style.boxShadow = "0 2px 8px rgba(220,38,38,0.12)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = "#e5e7eb";
@@ -45,7 +45,7 @@ export default function TestCasesTab({ onLoad }) {
               {tc.data.member_name} · ₹{tc.data.claim_amount.toLocaleString()}
             </div>
             <div style={{ fontSize: 11, color: "#9ca3af", marginTop: 2 }}>{tc.data.diagnosis}</div>
-            <div style={{ marginTop: 10, padding: 6, background: "#7c3aed", color: "white", borderRadius: 6, fontSize: 12, fontWeight: 600, textAlign: "center" }}>
+            <div style={{ marginTop: 10, padding: 6, background: "#0f0f0f", color: "white", borderRadius: 6, fontSize: 12, fontWeight: 600, textAlign: "center" }}>
               Load &amp; Process →
             </div>
           </div>
