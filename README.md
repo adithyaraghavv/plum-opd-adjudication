@@ -98,25 +98,25 @@ APPROVED     PARTIAL    REJECTED      MANUAL REVIEW
 ## Screenshots
 
 ### Submit Claim — Dark Theme
-![Submit Claim](opd%20screenshot/approved.png)
+![Submit Claim](opd%20screenshot/approved.png.png)
 
 ### Approved Decision with Financial Breakdown
-![Approved](opd%20screenshot/approved.png)
+![Approved](opd%20screenshot/approved.png.png)
 
 ### Partial Approval (some items excluded)
-![Partial](opd%20screenshot/partial.png)
+![Partial](opd%20screenshot/partial.png.png)
 
 ### Manual Review (fraud flags)
-![Manual Review](opd%20screenshot/manual-review.png)
+![Manual Review](opd%20screenshot/manual-review.png.png)
 
 ### History Dashboard with Annual Limit Tracker
-![History](opd%20screenshot/history.png)
+![History](opd%20screenshot/history.png.png)
 
 ### Test Cases
-![Test Cases](opd%20screenshot/test-cases.png)
+![Test Cases](opd%20screenshot/test-case.png.png)
 
 ### Policy Reference
-![Policy](opd%20screenshot/policy.png)
+![Policy](opd%20screenshot/policy.png.png)
 
 ---
 
